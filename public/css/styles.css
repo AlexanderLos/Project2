@@ -1,0 +1,32 @@
+* {
+    background-color: rgb(223, 230, 231);
+    font-family: 'Sen', sans-serif;
+    color: rgb(75, 120, 255);
+}
+
+h1 {
+    text-align: center;
+    animation: fadeIn 1000ms ease-in-out forwards;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px; 
+    margin-top: -1%;
+    animation: fadeIn 2800ms ease-in-out forwards;
+}
+
+h3 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
