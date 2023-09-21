@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/headers.ejs') %>
+    <title>Edit Task</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Edit <%= task.taskName %></h1>
+    <form action="/tasks/<%= task._id %>?_method=PUT" method="POST">
+        <label for="taskName">Task Name:</label>
+        <input type="text" name="taskName" id="taskName" value="<%= task.taskName %>" required />
+
+        <label for="status">Status:</label>
+        <select name="status" id="status">
+            <option value="Pending" <%= task.status === 'Pending' ? 'selected' : '' %>>Pending</option>
+            <option value="Completed" <%= task.status === 'Completed' ? 'selected' : '' %>>Completed</option>
+        </select>
+
+        <input type="submit" value="Update Task">
+    </form>
+</div>
+
+</body>
+</html>
