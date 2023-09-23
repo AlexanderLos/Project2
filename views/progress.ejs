@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Progress</title>
+    <%- include('partials/headers.ejs') %>
+</head>
+<body>
+
+    <nav id="nav">
+        <ul>
+            <li><a href="/tasks">HOME</a></li>
+            <li><a href="/progress">PROGRESS</a></li>
+        </ul>
+    </nav>
+
+    <h1>Your Progress</h1>
+    <ul id="progress-list">
+        <% for(let day of progressDays) { %>
+            <li class="<%= day.result %>">
+                <%= new Date(day.date).toDateString() %> - <%= day.result %>
+            </li>
+        <% } %>
+    </ul>
+</body>
+</html>

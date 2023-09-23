@@ -3,3 +3,34 @@ Heres a bunch of resources I found that helped with the project, feel free to ch
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 
+
+- Removed New route, didn't have a usecase for it since you can just create new to-do tasks from the tasks.ejs page.
+
+- No more CSS timer, this was nearly impossible to code. I settled with just a background timer for all the routes via server.js and prompts of Good morning, good afternoon and good night to give the use an idea of how much time they have left. (This project is still in beta).
+
+
+**MVP Goals**
+1.Ability to add, edit, and delete tasks. (COMPLETED)
+2.24-hour timer for each task. (COMPLETED) 
+3.Display of Green or Red day based on task completion.  (COMPLETED) 
+4.Progress page to view past Green and Red days. (COMPLETED)
+
+4&5 GO TOGETHER.
+
+**How I Approached This Project**
+
+- The first thing I did was copy my work from hw15, and proceeded to revamp all the routes and pages this cut time in half as I didn't have to recode everything (Backfired later when I had to recode everything).
+
+- I then proceeded to style all the sites thoroughly with so so so much google research, I gave up on css at one point and focused heavily on the functionality of the routes, the timer was a pain but I pulled through. 
+
+- The site still had so many bugs despite constant revision. I finally got the site to work atleast at 89% efficiency
+
+
+**Known Bugs**
+
+- Once you edit the tasks on your page may encounter a problem where the to do list item is removed from the server because the 24 hour timer has ended. if this happens it will crash the site, working on a fix.
+
+- My 24 hour timer was to be tested only by changing the countdown in the timer from 24 * 60 * 60 * 1000); to  60 * 1000); .  To work around this I changed the countdown from an entire day (I am not waiting that long )to just a minute. If the minute detail bothers you revert the code in the server.js with 24 * 60 * 60 * 1000);.
+
+
+

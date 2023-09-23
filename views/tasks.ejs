@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <title>Day Win - Tasks</title>
+    <title>Day Win - Tasks</title>
     <link rel="stylesheet" href="/css/tasks.css" />
     <%- include('partials/headers.ejs') %>
 </head>
@@ -9,11 +9,12 @@
     <nav id="nav">
         <ul>
             <li><a href="/tasks">HOME</a></li>
-            <li><a href="">PROGRESS</a></li>
+            <li><a href="/progress">PROGRESS</a></li>
         </ul>
     </nav>
 
     <h1>Daily Tasks</h1>
+    <div id="time"></div>
 
     <form action="/tasks" method="POST">
         <label for="taskName">New Task:</label>
@@ -21,14 +22,16 @@
         <input type="submit" value="Add Task">
     </form>
 
-    <% function capitalizeFirst(taskName) {
-        return taskName.charAt(0).toUpperCase() + taskName.slice(1);
-    } %>
-
     <ul>
         <% for (let i in Task) { %>
             <li>
-                <div><h3><%= capitalizeFirst(Task[i].taskName)  %></h3></div>
+                <div>
+                    <h3>
+                        <a href="/tasks/<%= Task[i]._id %>">
+                            <%= Task[i].taskName.charAt(0).toUpperCase() + Task[i].taskName.slice(1)  %>
+                        </a>
+                    </h3>
+                </div>
                 <div>Status: <%= Task[i].status %></div>
 
                 <form action="/tasks/<%= Task[i]._id %>?_method=DELETE" method="POST" style="display: inline-block;">
